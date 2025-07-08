@@ -1,0 +1,39 @@
+@api = http://localhost:4000/api/tasks
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NDMwYTI4MDMxMWMxN2QyYjI0ZDA0NCIsImlhdCI6MTc0OTI0MzUwMCwiZXhwIjoxNzQ5MzI5OTAwfQ.uYnyrIvFxNmxciYxhUqhT3GimAfE-UZZUoeUduFxazg
+@num = 2
+@id = 68435a45c7ff5d2c640f3ed5
+
+###* GET /tasks - Auth required
+GET {{api}}
+Authorization: {{token}}
+
+###* GET /tasks/:id - Auth required
+GET {{api}}/{{id}}
+Authorization: {{token}}
+
+###* POST /tasks
+POST {{api}}
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "title": "My new task {{num}}",
+  "description": "My new task description {{num}}",
+  # "date": "2025-06-01T00:00:00Z" 
+  # opcional
+}
+
+###* UPDATE /tasks - Auth required
+PUT {{api}}/{{id}}
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "title": "My new task {{num}} ACTUALIZADA",
+  "description": "My new task description {{num}} ACTUALIZADA"
+}
+
+###* DELETE /tasks
+DELETE {{api}}/{{id}}
+Authorization: {{token}}
+

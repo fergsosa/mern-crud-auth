@@ -1,0 +1,31 @@
+@api = http://localhost:4000/auth/api
+@num = 11
+
+### post register
+POST {{api}}/register
+Content-Type: application/json
+
+{
+  "username": "test{{num}}",
+  "email": "test{{num}}@gmail.com",
+  "password": "test{{num}}password"
+}
+### post login
+POST {{api}}/login
+Content-Type: application/json
+
+{
+  "email": "asd@a.com",
+  "password": "asdasd"
+  # "email": "test{{num}}@gmail.com",
+  # "password": "test{{num}}password"
+  # "password": false
+
+}
+
+### verified token
+GET {{api}}/verify
+# GET {{api}}/profile
+
+### Logout
+POST {{api}}/logout
